@@ -39,13 +39,26 @@ function init() {
   container.innerHTML = '';
 
   imagesArray.forEach((src, index) => {
-    const img = document.createElement('img');
-    img.src = src;
-    img.dataset.index = index;
-    img.className = '';
-    img.addEventListener('click', onImageClick);
-    container.appendChild(img);
-  });
+  const img = document.createElement('img');
+  img.src = src;
+
+  // Assign class based on index
+  if (index === 0) {
+    img.className = 'img1';
+  } else if (index === 1) {
+    img.className = 'img2';
+  } else if (index === 2) {
+    img.className = 'img3';
+  } else if (index === 3) {
+    img.className = 'img4';
+  } else if (index === 4) {
+    img.className = 'img5';
+  }
+
+  img.dataset.index = index;
+  img.addEventListener('click', onImageClick);
+  container.appendChild(img);
+});
 }
 
 // Handle image clicks
